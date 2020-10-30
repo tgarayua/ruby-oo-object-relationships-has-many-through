@@ -1,11 +1,11 @@
 class Waiter
 
-    attr_accessor :name, :age
+    attr_accessor :name, :years
     @@all = []
 
-    def initialize(name, age)
+    def initialize(name, years)
         @name = name
-        @age = age
+        @years = years
         @@all << self
     end
 
@@ -13,7 +13,7 @@ class Waiter
         @@all
     end
 
-    def new_meal(customer, total, tip)
+    def new_meal(customer, total, tip=0)
         Meal.new(self, customer, total, tip)
     end
 
@@ -27,6 +27,6 @@ class Waiter
         end
       
         best_tipped_meal.customer
-    end
-  
+      end
+
 end
